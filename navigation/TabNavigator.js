@@ -1,0 +1,122 @@
+// ./navigation/TabNavigator.js
+import React from "react";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import Ionicons from "react-native-vector-icons/Ionicons";
+// import Ionicons from 'react-native-ionicons';
+// import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
+// import { faFileMedical, faPencil, faBook, faHome } from '@fortawesome/free-solid-svg-icons';
+// import { StyleSheet, TextInput } from 'react-native';
+
+
+import { 
+  CitaStackNavigator, 
+  EstudioStackNavigator, 
+  InformacionStackNavigator,
+  NotaStackNavigator,
+  RecetaStackNavigator,HomeStackNavigator,LoginStackNavigator, MainStackNavigator,UsuarioStackNavigator} from "./StackNavigator";
+
+
+const Tab = createBottomTabNavigator();
+
+const BottomTabNavigator = () => {
+  return (
+    <Tab.Navigator
+    screenOptions={({ route }) => ({
+      tabBarIcon: ({ focused, color, size }) => {
+        let iconName;
+        if (route.name === "NotaTab") {
+          iconName = focused ? "people-outline" : "people";
+        } else if (route.name === "RecetaTab") {
+          iconName = focused ? "body-outline" : "body";
+        } else if (route.name === "EstudioTab") {
+          iconName = focused ? "book-outline" : "book";
+        } /*else if (route.name === "CitaTab") {
+          iconName = focused ? "body-outline" : "body";
+        }*/else if (route.name === "HomeTab") {
+          iconName = focused ? "home" : "home";
+        }else if (route.name === "InformacionTab") {
+          iconName = focused ? "home" : "home";
+        }else if (route.name === "LoginTab") {
+          iconName = focused ? "home" : "home";
+        }else if (route.name === "UsuarioTab") {
+          iconName = focused ? "home" : "home";
+        }
+        // You can return any component that you like here!
+        return <Ionicons name={iconName} size={size} color={color} />;
+      },
+      tabBarActiveTintColor: "blue",
+      tabBarInactiveTintColor: "gray",
+    })}
+  >
+      <Tab.Screen
+        name="LoginTab"
+        component={LoginStackNavigator}
+        options={{
+          tabBarLabel: "Login",
+          headerShown: false,
+          tabBarStyle:{display: "none"}, headerShown:false, tabBarButton: () => null
+        }}
+      />
+    <Tab.Screen
+        name="HomeTab"
+        component={HomeStackNavigator}
+        options={{
+          tabBarLabel: "Homes",
+          headerShown: false,
+          tabBarStyle:{display: "none"}, headerShown:false
+        }}
+      />
+    <Tab.Screen
+        name="NotaTab"
+        component={NotaStackNavigator}
+        options={{
+          tabBarLabel: "Notas",
+          headerShown: false,
+        }}
+      />
+      <Tab.Screen
+        name="RecetaTab"
+        component={RecetaStackNavigator}
+        options={{
+          tabBarLabel: "Recetas",
+          headerShown: false,
+        }}
+      />
+      <Tab.Screen
+        name="EstudioTab"
+        component={EstudioStackNavigator}
+        options={{
+          tabBarLabel: "Estudios",
+          headerShown: false,
+        }}
+      />
+      <Tab.Screen
+        name="UsuarioTab"
+        component={UsuarioStackNavigator}
+        options={{
+          tabBarLabel: "Usuarios",
+          headerShown: false,
+        }}
+      />
+      <Tab.Screen
+        name="InformacionTab"
+        component={InformacionStackNavigator}
+        options={{
+          tabBarLabel: "Informacion",
+          headerShown: false,
+        }}
+      />
+      {/* <Tab.Screen
+        name="CitaTab"
+        component={CitaStackNavigator}
+        options={{
+          tabBarLabel: "Citas",
+          headerShown: false,
+        }}
+      /> */}
+    </Tab.Navigator>
+  );
+};
+
+export default BottomTabNavigator;
+
