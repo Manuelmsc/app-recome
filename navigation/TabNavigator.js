@@ -25,21 +25,21 @@ const BottomTabNavigator = () => {
       tabBarIcon: ({ focused, color, size }) => {
         let iconName;
         if (route.name === "NotaTab") {
-          iconName = focused ? "people-outline" : "people";
+          iconName = focused ? "clipboard-outline" : "clipboard";
         } else if (route.name === "RecetaTab") {
-          iconName = focused ? "body-outline" : "body";
+          iconName = focused ? "medkit" : "medkit";
         } else if (route.name === "EstudioTab") {
-          iconName = focused ? "book-outline" : "book";
+          iconName = focused ? "ios-flask-outline" : "ios-flask";
         } /*else if (route.name === "CitaTab") {
-          iconName = focused ? "body-outline" : "body";
+          iconName = focused ? "md-calendar-sharp" : "md-calendar";
         }*/else if (route.name === "HomeTab") {
-          iconName = focused ? "home" : "home";
+          iconName = focused ? "md-home-outline" : "md-home";
         }else if (route.name === "InformacionTab") {
-          iconName = focused ? "home" : "home";
+          iconName = focused ? "ios-information-circle-sharp" : "ios-information";
         }else if (route.name === "LoginTab") {
           iconName = focused ? "home" : "home";
         }else if (route.name === "UsuarioTab") {
-          iconName = focused ? "home" : "home";
+          iconName = focused ? "ios-people-sharp" : "ios-people";
         }
         // You can return any component that you like here!
         return <Ionicons name={iconName} size={size} color={color} />;

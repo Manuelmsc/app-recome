@@ -166,7 +166,7 @@ const HomeStackNavigator = () => {
           title: "Menu Principal",
           headerRight: () => (
             <Ionicons
-              name={"ios-add-circle"}
+              name={"log-in-outline"}
               size={25}
               color={"white"}
               style={{ marginRight: 15 }}
