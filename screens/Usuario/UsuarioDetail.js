@@ -33,7 +33,7 @@ export default function UsuarioDetail({ route, navigation }) {
     // );
     myHeaders.append("Content-Type", "application/json");
 
-    fetch("http://192.168.1.111:3000/usuarios/" + item.idUsuario, {
+    fetch("http://192.168.100.5:3000/usuarios/" + item.idUsuario, {
       method: "PATCH",
       headers: myHeaders,
       body: JSON.stringify({
@@ -59,7 +59,7 @@ export default function UsuarioDetail({ route, navigation }) {
 
     myHeaders.append("Content-Type", "application/json");
 
-    fetch("http://192.168.1.111:3000/usuarios/" + item.idUsuario, {
+    fetch("http://192.168.100.5:3000/usuarios/" + item.idUsuario, {
       method: "DELETE",
       headers: myHeaders,
       body: JSON.stringify({

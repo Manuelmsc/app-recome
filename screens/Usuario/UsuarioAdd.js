@@ -37,7 +37,7 @@ export default function UsuarioAdd({navigation}) {
   
     myHeaders.append("Content-Type", "application/json");
 
-    fetch("http://192.168.1.111:3000/usuarios", {
+    fetch("http://192.168.100.5:3000/usuarios", {
         method: "POST",
         headers: myHeaders,
         body: JSON.stringify({

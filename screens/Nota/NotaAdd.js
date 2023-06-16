@@ -63,7 +63,7 @@ export default function NotaAdd({navigation}) {
 
     myHeaders.append("Content-Type", "application/json");
 
-    fetch("http://192.168.1.111:3000/notamedicas", {
+    fetch("http://192.168.100.5:3000/notamedicas", {
         method: "POST",
         headers: myHeaders,
         body: JSON.stringify({

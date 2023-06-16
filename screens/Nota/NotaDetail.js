@@ -55,7 +55,7 @@ export default function NotaDetail({ route, navigation }) {
     //   "Bearer 62ddfa7559d5fdec64517e3ab70ee4fd60b2244e71fa042a44f914f8fa688263"
     // );
     myHeaders.append("Content-Type", "application/json");
-    fetch("http://192.168.1.111:3000/notamedicas/" + item.idNota, {
+    fetch("http://192.168.100.5:3000/notamedicas/" + item.idNota, {
         method: "PATCH",
         headers: myHeaders,
         body: JSON.stringify({
@@ -86,7 +86,7 @@ export default function NotaDetail({ route, navigation }) {
           // );
       
           myHeaders.append("Content-Type", "application/json");
-          fetch("http://192.168.1.111:3000/notamedicas/" + item.idNota, {
+          fetch("http://192.168.100.5:3000/notamedicas/" + item.idNota, {
             method: "DELETE",
             headers: myHeaders,
             body: JSON.stringify({

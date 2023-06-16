@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   View,
   Text,
@@ -6,14 +6,16 @@ import {
   FlatList,
   TouchableOpacity,
 } from "react-native";
+import { useIsFocused } from '@react-navigation/native';
 
 export default function Nota({navigation}) {
   const [notamedicas, setNota] = useState();
+  const isFocused = useIsFocused();
 
   const getNotaData = async () => {
     try {
       //   const headers = { "Content-Type": "application/json" };
-      let response = await fetch("http://192.168.1.111:3000/notamedicas");
+      let response = await fetch("http://192.168.100.5:3000/notamedicas");
       let data = await response.json();
       setNota(data);
     } catch (error) {
@@ -21,9 +23,15 @@ export default function Nota({navigation}) {
     }
   };
 
-  useState(() => {
-    getNotaData();
-  }, []);
+  useEffect(() => {
+    if (isFocused) {
+      getNotaData()
+    }
+  }, [isFocused]);
+
+  // useState(() => {
+  //   getNotaData();
+  // }, []);
 
   const renderItem = ({ item }) => {
     return (

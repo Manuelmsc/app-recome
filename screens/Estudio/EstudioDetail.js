@@ -41,7 +41,7 @@ export default function EstudioDetail({ route, navigation }) {
     // );
     myHeaders.append("Content-Type", "application/json");
 
-    fetch("http://192.168.1.111:3000/estudios/" + item.idestudio, {
+    fetch("http://192.168.100.5:3000/estudios/" + item.idestudio, {
       method: "PATCH",
       headers: myHeaders,
       body: JSON.stringify({
@@ -68,7 +68,7 @@ export default function EstudioDetail({ route, navigation }) {
 
     myHeaders.append("Content-Type", "application/json");
 
-    fetch("http://192.168.1.111:3000/estudios/" + item.idestudio, {
+    fetch("http://192.168.100.5:3000/estudios/" + item.idestudio, {
       method: "DELETE",
       headers: myHeaders,
       body: JSON.stringify({

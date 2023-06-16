@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect} from "react";
 import {
   View,
   Text,
@@ -6,14 +6,16 @@ import {
   FlatList,
   TouchableOpacity,
 } from "react-native";
+import { useIsFocused  } from '@react-navigation/native';
 
 export default function Estudio({navigation}) {
   const [estudios, setEstudio] = useState();
+  const isFocused = useIsFocused();
 
   const getEstudioData = async () => {
     try {
       //   const headers = { "Content-Type": "application/json" };
-      let response = await fetch("http://192.168.1.111:3000/estudios");
+      let response = await fetch("http://192.168.100.5:3000/estudios");
       let data = await response.json();
       setEstudio(data);
     } catch (error) {
@@ -21,9 +23,15 @@ export default function Estudio({navigation}) {
     }
   };
 
-  useState(() => {
-    getEstudioData();
-  }, []);
+  useEffect(() => {
+    if (isFocused) {
+      getEstudioData()
+    }
+  }, [isFocused]);
+
+  // useState(() => {
+  //   getEstudioData();
+  // }, []);
 
   const renderItem = ({ item }) => {
     return (

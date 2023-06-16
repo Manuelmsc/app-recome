@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect} from "react";
 import {
   View,
   Text,
@@ -6,14 +6,16 @@ import {
   FlatList,
   TouchableOpacity,
 } from "react-native";
+import { useIsFocused } from '@react-navigation/native';
 
 export default function Receta({navigation}) {
   const [recetas, setReceta] = useState();
+  const isFocused = useIsFocused();
 
   const getRecetaData = async () => {
     try {
       //   const headers = { "Content-Type": "application/json" };
-      let response = await fetch("http://192.168.1.111:3000/recetas");
+      let response = await fetch("http://192.168.100.5:3000/recetas");
       let data = await response.json();
       setReceta(data);
     } catch (error) {
@@ -21,9 +23,15 @@ export default function Receta({navigation}) {
     }
   };
 
-  useState(() => {
-    getRecetaData();
-  }, []);
+  useEffect(() => {
+    if (isFocused) {
+      getRecetaData()
+    }
+  }, [isFocused]);
+
+  // useState(() => {
+  //   getRecetaData();
+  // }, []);
 
   const renderItem = ({ item }) => {
     return (

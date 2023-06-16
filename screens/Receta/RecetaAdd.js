@@ -48,7 +48,7 @@ export default function RecetaAdd({navigation}) {
   
       
 
-      fetch("http://192.168.1.111:3000/recetas", {
+      fetch("http://192.168.100.5:3000/recetas", {
         method: "POST",
         headers: myHeaders,
         body: JSON.stringify({

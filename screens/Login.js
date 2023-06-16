@@ -14,7 +14,7 @@ const Login = ({ navigation }) => {
 
   const getUsuarioData = async () => {
     try {
-      const response = await fetch("http://192.168.1.111:3000/usuarios");
+      const response = await fetch("http://192.168.100.5:3000/usuarios");
       const data = await response.json();
       console.log(data);
       setUsuario(data);
@@ -41,7 +41,7 @@ const Login = ({ navigation }) => {
   };
    return (
      <View style={styles.container}>
-        {/* <Image source={require('../assets/RegistroConsultaMedica.png')} style={styles.imagen} />  */}
+        {/* <Image source={require('../assets/recome.png')}style={styles.imagen}  />  */}
 
         <Text style={styles.titulo}>Registro de Consulta Medica</Text>
         <Text style={styles.subtitulo1}>¡Bienvenido!</Text>
@@ -60,7 +60,7 @@ const Login = ({ navigation }) => {
            onChangeText={setPassword}
         />
         <TouchableOpacity onPress={() => handleSubmit(navigation)}> 
-          <View style={{ backgroundColor: "blue", padding: 10 }}>
+          <View style={{ backgroundColor: "blue", padding: 10, marginTop: 30, width: 200, borderRadius: 30, }}>
           <Text style={{ color: "white", textAlign: "center"}}>
           Inicio
           </Text>
@@ -82,10 +82,10 @@ const styles = StyleSheet.create({
     fontSize: 40,
     textAlign: 'center',
     color: '#000',
-    marginBottom: 25,
+    marginBottom: 1,
     fontWeight: 'bold',
     borderRadius: 10,
-    marginBottom: 20,
+    
   },
   subtitulo1: {
     fontSize: 30,
@@ -119,11 +119,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   imagen: {
-    width: 350,
+    width: 285,
     height: 280,
     resizeMode: 'cover',
-    //borderRadius: 10,
-    marginBottom: 80,
+    borderRadius: 10,
+    marginBottom: 20,
   },
   errorText: {
     color: 'red',

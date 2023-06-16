@@ -10,8 +10,11 @@ import { ScrollView } from "react-native-gesture-handler";
 
 
 
+
 export default function RecetaDetail({ route, navigation }) {
   const { item } = route.params;
+  
+
 
   const [recetas, setReceta] = useState({
     nombrepaciente: item.nombrepaciente,
@@ -43,7 +46,7 @@ export default function RecetaDetail({ route, navigation }) {
     // );
     myHeaders.append("Content-Type", "application/json");
 
-    fetch("http://192.168.1.111:3000/recetas/" + item.idReceta, {
+    fetch("http://192.168.100.5:3000/recetas/" + item.idReceta, {
       method: "PATCH",
       headers: myHeaders,
       body: JSON.stringify({
@@ -71,7 +74,7 @@ export default function RecetaDetail({ route, navigation }) {
 
     myHeaders.append("Content-Type", "application/json");
 
-    fetch("http://192.168.1.111:3000/recetas/" + item.idReceta, {
+    fetch("http://192.168.100.5:3000/recetas/" + item.idReceta, {
       method: "DELETE",
       headers: myHeaders,
       body: JSON.stringify({

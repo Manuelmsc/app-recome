@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState , useEffect } from "react";
 import {
   View,
   Text,
@@ -6,14 +6,16 @@ import {
   FlatList,
   TouchableOpacity,
 } from "react-native";
+import { useIsFocused } from '@react-navigation/native';
 
 export default function Usuario({navigation}) {
     const [usuarios, setUsuario] = useState();
+    const isFocused = useIsFocused();
 
     const getUsuarioData = async () => {
         try {
           //   const headers = { "Content-Type": "application/json" };
-          let response = await fetch("http://192.168.1.111:3000/usuarios");
+          let response = await fetch("http://192.168.100.5:3000/usuarios");
           let data = await response.json();
           setUsuario(data);
         } catch (error) {
@@ -21,9 +23,15 @@ export default function Usuario({navigation}) {
         }
       };
 
-      useState(() => {
-        getUsuarioData();
-      }, []);
+      useEffect(() => {
+        if (isFocused) {
+          getUsuarioData()
+        }
+      }, [isFocused]);
+
+      // useState(() => {
+      //   getUsuarioData();
+      // }, []);
     
       const renderItem = ({ item }) => {
         return (
