@@ -71,7 +71,7 @@ export default function NotaDetail({ route, navigation }) {
       })
         .then((response) => {
           response.text();
-          navigation.push("Nota");
+          navigation.navigate("Nota");
         })
         .then((result) => console.log(result))
         .catch((error) => console.log(error));
@@ -102,7 +102,7 @@ export default function NotaDetail({ route, navigation }) {
           })
             .then((response) => {
               response.text();
-              navigation.push("Nota");
+              navigation.navigate("Nota");
             })
             .then((result) => console.log(result))
             .catch((error) => console.log(error));

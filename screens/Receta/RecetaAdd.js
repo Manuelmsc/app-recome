@@ -64,7 +64,7 @@ export default function RecetaAdd({navigation}) {
         })
         .then((result) => {
           console.log("Result");
-          navigation.push("Receta");
+          navigation.navigate("Receta");
           console.log(result);
         })
         .catch((error) => {

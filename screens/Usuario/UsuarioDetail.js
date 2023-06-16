@@ -43,7 +43,7 @@ export default function UsuarioDetail({ route, navigation }) {
     })
       .then((response) => {
         response.text();
-        navigation.push("Usuario");
+        navigation.navigate("Usuario");
       })
       .then((result) => console.log(result))
       .catch((error) => console.log(error));
@@ -69,7 +69,7 @@ export default function UsuarioDetail({ route, navigation }) {
     })
       .then((response) => {
         response.text();
-        navigation.push("Usuario");
+        navigation.navigate("Usuario");
       })
       .then((result) => console.log(result))
       .catch((error) => console.log(error));

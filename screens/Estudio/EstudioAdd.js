@@ -64,7 +64,7 @@ export default function Estudio({navigation}) {
         })
         .then((result) => {
           console.log("Result");
-          navigation.push("Estudio");
+          navigation.navigate("Estudio");
           console.log(result);
         })
         .catch((error) => {

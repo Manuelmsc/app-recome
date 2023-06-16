@@ -58,7 +58,7 @@ export default function RecetaDetail({ route, navigation }) {
     })
       .then((response) => {
         response.text();
-        navigation.push("Receta");
+        navigation.navigate("Receta");
       })
       .then((result) => console.log(result))
       .catch((error) => console.log(error));
@@ -86,7 +86,7 @@ export default function RecetaDetail({ route, navigation }) {
     })
       .then((response) => {
         response.text();
-        navigation.push("Receta");
+        navigation.navigate("Receta");
       })
       .then((result) => console.log(result))
       .catch((error) => console.log(error));

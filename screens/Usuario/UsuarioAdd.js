@@ -51,7 +51,7 @@ export default function UsuarioAdd({navigation}) {
         })
         .then((result) => {
           console.log("Result");
-          navigation.push("Usuario");
+          navigation.navigate("Usuario");
           console.log(result);
         })
         .catch((error) => {

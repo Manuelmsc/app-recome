@@ -83,7 +83,7 @@ export default function NotaAdd({navigation}) {
       })
       .then((result) => {
         console.log("Result");
-        navigation.push("Nota");
+        navigation.navigate("Nota");
         console.log(result);
       })
       .catch((error) => {

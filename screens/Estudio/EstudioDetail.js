@@ -53,7 +53,7 @@ export default function EstudioDetail({ route, navigation }) {
     })
       .then((response) => {
         response.text();
-        navigation.push("Estudio");
+        navigation.navigate("Estudio");
       })
       .then((result) => console.log(result))
       .catch((error) => console.log(error));
@@ -80,7 +80,7 @@ export default function EstudioDetail({ route, navigation }) {
     })
       .then((response) => {
         response.text();
-        navigation.push("Estudio");
+        navigation.navigate("Estudio");
       })
       .then((result) => console.log(result))
       .catch((error) => console.log(error));
